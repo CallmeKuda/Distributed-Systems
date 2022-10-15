@@ -1,0 +1,29 @@
+Trainee and Trainer
+Both communicate via request and response
+Hence both are producers and comsumers
+
+Topic
+e.g.    training-request
+        training-response
+e.g.    trainee-request
+        trainee-response
+
+
+MongoDb
+start db server
+mongodb [config-files]
+dbPath = change Path
+
+in mongoshell (mongosh)
+
+insert a collection 
+db.collection.insertOne({})
+
+e.g db.training.insertOne(
+    {specialisation: "CS", level: "Middle", duration: "half-day", content: ["graph search", "kafka"], format: "slides"}
+    )
+
+db.training.find({level: "Middle"})
+
+deploy to docker
+bal build --cloud=docker
